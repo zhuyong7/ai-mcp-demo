@@ -13,7 +13,7 @@
     <groupId>com.zy</groupId>
     <artifactId>ai-mcp-webflux</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
 
     <properties>
@@ -27,6 +27,7 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- Spring AI BOM -->
             <dependency>
                 <groupId>org.springframework.ai</groupId>
                 <artifactId>spring-ai-bom</artifactId>
@@ -34,6 +35,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- Spring AI Alibaba BOM -->
             <dependency>
                 <groupId>com.alibaba.cloud.ai</groupId>
                 <artifactId>spring-ai-alibaba-bom</artifactId>
@@ -41,6 +43,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- Spring AI Alibaba Extensions BOM -->
             <dependency>
                 <groupId>com.alibaba.cloud.ai</groupId>
                 <artifactId>spring-ai-alibaba-extensions-bom</artifactId>
@@ -48,11 +51,23 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
-            <dependency>
-                <groupId>org.springframework.ai</groupId>
-                <artifactId>spring-ai-starter-mcp-server-webflux</artifactId>
-            </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <!-- Spring Boot Starter WebFlux -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+
+        <!-- Spring AI MCP Server (WebFlux) -->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-mcp-server-webflux</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+
+
+    </dependencies>
 </project>
